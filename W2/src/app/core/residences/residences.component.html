@@ -1,0 +1,11 @@
+<h2>Liste des résidences</h2>
+<div class="residence-card" *ngFor="let residence of listResidences">
+    <div class="residence-image">
+        <img [src]="residence.image" alt="Image de la résidence">
+    </div>
+    <div class="residence-details">
+        <h3>{{ residence.name }}</h3>
+        <p>{{ residence.address }}</p>
+        <button (click)="showApartments(residence)">Voir les appartements</button>
+    </div>
+</div>

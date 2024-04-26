@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { DetailApartmentComponent } from './detail-apartment.component';
+
+describe('DetailApartmentComponent', () => {
+  let component: DetailApartmentComponent;
+  let fixture: ComponentFixture<DetailApartmentComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [DetailApartmentComponent]
+    });
+    fixture = TestBed.createComponent(DetailApartmentComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

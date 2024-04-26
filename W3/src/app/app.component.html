@@ -1,0 +1,22 @@
+<nav>
+  <ul>
+    <li>
+      <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <i class="fas fa-home"></i> Accueil
+      </a>
+    </li>
+    <li>
+      <a routerLink="/addResidence" routerLinkActive="active">
+        <i class="fas fa-plus"></i> Ajouter une résidence
+      </a>
+    </li>
+    <li>
+      <a routerLink="/404" routerLinkActive="active">
+        <i class="fas fa-exclamation-triangle"></i> Page non trouvée
+      </a>
+    </li>
+    <!-- Ajoutez les autres liens avec des effets visuels appropriés -->
+  </ul>
+</nav>
+
+<app-residences></app-residences>
