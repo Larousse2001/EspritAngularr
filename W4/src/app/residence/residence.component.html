@@ -1,0 +1,8 @@
+<ul class="list-group" *ngFor="let r of listResidences">
+
+    <li class="list-group-item">
+
+        {{r.id}} -- {{r.name}} -- {{r.address}}
+        <button class="btn btn-info" [routerLink]="['/apartement',r.id]">ShowApp</button>
+    </li>
+</ul>

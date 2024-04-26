@@ -1,0 +1,17 @@
+<p>home works!</p>{{title | uppercase}}
+
+
+<ul class="list-group" *ngFor="let i of listUsers">
+    <li class="list-group-item">
+        {{i.name}} - {{i.age}} - {{i.email}} - {{i.etat}}
+    </li>
+</ul>
+
+
+<input type="submit" value="save" (click)="affich()" class="btn btn-info">
+
+<div [style.backgroundColor]="color"> Property Binding
+</div>
+
+<br>
+<input type="text" [(ngModel)]="color" class="form-control">

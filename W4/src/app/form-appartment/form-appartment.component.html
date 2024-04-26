@@ -1,0 +1,75 @@
+<form [formGroup]="apartForm" (ngSubmit)="submitForm()" class="needs-validation">
+    <div class="mb-3">
+      <label class="form-label">Apartment Number:</label>
+      <input type="number" formControlName="appartNum" class="form-control">
+      <div class="invalid-feedback" *ngIf="apartForm.get('appartNum')?.invalid && apartForm.get('appartNum')?.touched">
+        Apartment Number is required.
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label class="form-label">Floor Number:</label>
+      <input type="number" formControlName="floorNum" class="form-control">
+      <div class="invalid-feedback" *ngIf="apartForm.get('floorNum')?.invalid && apartForm.get('floorNum')?.touched">
+        Floor Number is required.
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label class="form-label">Surface:</label>
+      <input type="number" formControlName="surface" class="form-control">
+      <div class="invalid-feedback" *ngIf="apartForm.get('surface')?.invalid && apartForm.get('surface')?.touched">
+        Surface is required.
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label class="form-label">Terrace:</label>
+      <select formControlName="terrace" class="form-select">
+        <option value="">Select</option>
+        <option value="oui">Yes</option>
+        <option value="non">No</option>
+      </select>
+      <div class="invalid-feedback" *ngIf="apartForm.get('terrace')?.invalid && apartForm.get('terrace')?.touched">
+        Terrace is required.
+      </div>
+    </div>
+  
+    <div *ngIf="apartForm.get('terrace')?.value === 'oui'" class="mb-3">
+      <label class="form-label">Surface Terrace:</label>
+      <input type="number" formControlName="surfaceTerrace" class="form-control">
+      <div class="invalid-feedback" *ngIf="apartForm.get('surfaceTerrace')?.invalid && apartForm.get('surfaceTerrace')?.touched">
+        Surface Terrace is required.
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label class="form-label">Category:</label>
+      <input type="text" formControlName="category" class="form-control">
+      <div class="invalid-feedback" *ngIf="apartForm.get('category')?.invalid && apartForm.get('category')?.touched">
+        Category is required.
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label class="form-label">Description:</label>
+      <textarea formControlName="description" class="form-control"></textarea>
+      <div class="invalid-feedback" *ngIf="apartForm.get('description')?.invalid && apartForm.get('description')?.touched">
+        <div *ngIf="apartForm.get('description')?.errors?.['required']">Description is required.</div>
+        <div *ngIf="apartForm.get('description')?.errors?.['minlength']">Description must be at least 10 characters long.</div>
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label class="form-label">Residence:</label>
+      <select formControlName="residence" class="form-select">
+        <option *ngFor="let residence of residences" [value]="residence.id">{{ residence.name }}</option>
+      </select>
+      <div class="invalid-feedback" *ngIf="apartForm.get('residence')?.invalid && apartForm.get('residence')?.touched">
+        Residence is required.
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="apartForm.invalid" class="btn btn-primary">Add</button>
+  </form>
+  
