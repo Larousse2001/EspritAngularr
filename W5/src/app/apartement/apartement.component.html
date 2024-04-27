@@ -1,0 +1,27 @@
+<input class="form-control" type="text" placeholder="Search" [(ngModel)]="surfaceChoisi">
+{{surfaceChoisi}}
+<table class="table">
+    <tr>
+        <th> appartNum</th>
+        <th> FloorNum</th>
+        <th> Surface</th>
+        <th> Terrace</th>
+        <th> Category</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let a of listFiltrer">
+        <ng-container *ngIf="a.surface==surfaceChoisi || surfaceChoisi ==null">
+            <td>{{a.appartNum}}</td>
+            <td>{{a.floorNum}}</td>
+            <td>{{a.surface}}</td>
+            <td>{{a.terrace}}</td>
+            <td>{{a.category}}</td>
+            <td><button (click)=" fav(a) ">Like</button></td>
+        </ng-container>
+    </tr>
+</table>
+
+
+<ng-container *ngIf="listFiltrer.length==0 ">
+    No Appartements
+</ng-container>

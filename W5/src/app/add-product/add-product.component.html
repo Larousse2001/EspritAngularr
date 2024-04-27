@@ -1,0 +1,16 @@
+<p>add-product works!</p>
+
+<p>Form Groupe</p>
+<form [formGroup]="loginForm">
+    <label>Login</label>
+    <input type="text" formControlName="id" class="form-control">
+    <label>Title</label>
+    <input type="text" formControlName="title" class="form-control">
+    <label>Price</label>
+    <input type="text" formControlName="price" class="form-control">
+    <label>Quantity</label>
+    <input type="text" formControlName="quantity" class="form-control">
+    <label>Like</label>
+    <input type="text" formControlName="like" class="form-control">
+    <input type="submit" value="save" (click)="add()" [disabled]="loginForm.invalid" class="btn btn-info">
+</form>
